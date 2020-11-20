@@ -20,6 +20,9 @@ public class Files1{
 
         if (file.exists()){
             System.out.println(file.getAbsolutePath());
+            System.out.println(file.length());
         }
+
+
     }
 }

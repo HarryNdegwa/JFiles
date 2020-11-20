@@ -1,6 +1,8 @@
 
 import java.io.File;
+import java.io.FileNotFoundException;
 // import java.io.IOException;
+import java.util.Scanner;
 
 public class Files1{
 
@@ -18,10 +20,26 @@ public class Files1{
         //     System.out.println("Error creating file");
         // }
 
-        if (file.exists()){
-            System.out.println(file.getAbsolutePath());
-            System.out.println(file.length());
+        // if (file.exists()){
+        //     System.out.println(file.getAbsolutePath());
+        //     System.out.println(file.length());
+        // }
+
+        try{
+            Scanner fileReader = new Scanner(file);
+
+            while (fileReader.hasNextLine()){
+                System.out.println(fileReader.nextLine());
+            }
+
+            fileReader.close();
+        }catch(FileNotFoundException e){
+            System.out.println("Error occured ");
+            e.printStackTrace();
+
         }
+
+
 
 
     }
